@@ -1,0 +1,135 @@
+.project{
+
+    &__wrapper{
+        @include wrapper();
+    }
+
+    &__items{
+        @include row-flex();
+
+        &_item{
+            @include col();
+            @include size(24);
+        }
+    }
+
+    &-title{
+        color: #505050;
+    }
+
+    &__slider{
+        margin-top: rem(32);
+
+        @include above($break_sm) {
+            margin-top: rem(48);
+        }
+
+        &_nav{
+            @include wrapper();
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include above($break_sm) {
+                margin-top: rem(32);
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        &_link{
+            color: $red;
+            background-color: #fff;
+            border: solid rem(2) $red;
+
+            &:after {
+                background: $red;
+            }
+        }
+
+        &_pagination{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: rem(42);
+
+            @include above($break_sm) {
+                margin-bottom: 0;
+                order: 1; 
+            }
+
+            .swiper-pagination-bullet{
+                background-color: #e6e8ea;
+                margin-left: rem(4);
+                margin-right: rem(4);
+                opacity: 1;
+                &-active{
+                    background-color: $red;
+                }
+            }
+        }
+
+        &_btn{
+            display: none;
+
+            @include above($break_md) {
+                height: rem(60);
+                width: rem(60);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                outline: none;
+                cursor: pointer;
+                position: absolute;
+                top: calc(50% - 30px);
+                background-color: rgba(255, 255, 255, 0.6);
+                z-index: 100;
+            }
+
+            &:hover use{
+                stroke: $red;
+            }
+
+            use{
+                stroke: #485058;
+                transition: all .2s;
+            }
+
+            .icon{
+                height: rem(16);
+                width: rem(8);
+            }
+        }
+
+        .button-next{
+            border-bottom-left-radius: 50%;
+            border-top-left-radius: 50%;
+            right: 0;
+        }
+        .button-prev{
+            border-bottom-right-radius: 50%;
+            border-top-right-radius: 50%;
+            left: 0;
+        }
+    }
+
+    &__slide{
+
+        padding: rem(10) rem(10) rem(16) rem(10);
+        
+
+        img{
+            width: 100%;
+            border-radius: rem(8);
+            box-shadow: 0 8px 8px rgba(0, 0, 0, 0.08), 0 0 8px rgba(0, 0, 0, 0.04), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+    
+            &:hover{
+                box-shadow: 0 10px 16px rgba(0, 0, 0, 0.12), 0 0 16px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    
+}

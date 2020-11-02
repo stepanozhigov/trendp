@@ -1,0 +1,101 @@
+.director{
+    background-color: #f8f8f8;
+
+    &__wrapper{
+        @include wrapper();
+    }
+
+    &__items{
+        @include row-flex();
+
+        &_item{
+            @include col();
+            @include size(24);
+            @include size-md(20);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    &-img{
+        @include offset-right-md(4);
+        @include offset-right-lg(0);
+        @include size-lg(12);
+        @include size-lgx(13);
+        display: flex;
+        align-items: center;
+
+        & > *{
+            width: 100%;
+        }
+
+        img{
+            width: 100%;
+        }
+    }
+
+    &-text{
+        @include offset-left-md(4);
+        @include offset-left-lg(2);
+        @include offset-left-lgx(1);
+        @include size-lg(10);
+    }
+
+    &-title{
+        color: #505050;
+        margin-top: rem(38);
+        margin-bottom: rem(26);
+
+        @include above($break_sm) {
+            margin-top: rem(64);
+        }
+
+        @include above($break_md) {
+            margin-top: 0;
+        }
+    }
+
+    &-par{
+        font-family: $lato;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-bottom: rem(8);
+    }
+
+    &-btn{
+        background: #ed5842;
+        // background: linear-gradient(270deg,#6567af,#c9357f,#ed5842,#fbc96c,#f2934e,#e34f53);
+        background: radial-gradient(circle 214px at 30% 100%, #ffd776 0%, #f3a554 25%, #f15c3c 38%, #c32f87 70%, #6765ae 95%, #5c6cb3 100%);
+        margin-top: rem(32);
+        align-self: center;
+
+        @include above($break_sm) {
+            align-self: flex-start;
+        }
+
+        @include above($break_md) {
+            margin-top: 0;
+        }
+
+        svg{
+            margin-right: rem(8);
+        }
+    }
+
+    &__sign{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        &_text{
+            font-family: $lato;
+            font-weight: 400;
+            margin-right: rem(16);
+        }
+
+        &_img{
+            
+        }
+    }
+}

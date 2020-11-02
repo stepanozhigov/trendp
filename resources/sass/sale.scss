@@ -1,0 +1,94 @@
+.sale{
+    color: #fff;
+    background-color: $orange;
+    padding-top: rem(64);
+    padding-bottom: rem(64);
+
+    @include above($break_sm) {
+        padding-top: rem(80);
+        padding-bottom: rem(80);
+    }
+    
+
+    &__wrapper{
+        @include wrapper();
+    }
+
+    &__items{
+        @include row-flex();
+
+        &_item{
+            @include col();
+            @include size(24);
+            @include size-md(22);
+            @include offset-left-md(2);
+            @include size-lg(18);
+            @include offset-left-lg(6);
+            position: relative;
+
+            &>p{
+                position: relative;
+                z-index: 20;
+            }
+
+            &:before{
+                content: '';
+                width: rem(580);
+                background-image: url(/img/home/cube.svg);
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                position: absolute;
+                z-index: 10;
+                top: rem(-128);
+                bottom: rem(-128);
+                left: rem(-280);
+
+                @include above($break_sm) {
+                    width: rem(800);
+                    top: rem(-220);
+                    bottom: rem(-176);
+                    left: rem(-370);
+                }
+                @include above($break_sm) {
+                    left: rem(-300);
+                }
+            }
+        }
+    }
+
+    &-sm{
+        font-size: rem(28);
+        font-weight: 600;
+        letter-spacing: rem(-0.2);
+        @include above($break_sm) {
+            font-size: rem(32);
+        }
+    }
+    &-offer{
+        font-size: rem(64);
+        font-weight: 800;
+        letter-spacing: rem(-0.7);
+        margin-top: rem(16);
+        margin-bottom: rem(19);
+
+        @include above($break_sm) {
+            font-size: rem(72);
+            margin-top: rem(32);
+            margin-bottom: rem(24);
+        }
+        @include above($break_md) {
+            font-size: rem(80);
+        }
+    }
+    &-price{
+        font-size: rem(48);
+        font-weight: 800;
+        letter-spacing: rem(-0.6);
+        margin-top: rem(8);
+
+        @include above($break_sm) {
+            font-size: rem(56);
+            margin-top: rem(16);
+        }
+    }
+}
